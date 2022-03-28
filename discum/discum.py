@@ -695,6 +695,9 @@ class Client:
 	#join guild with invite code
 	def joinGuild(self, inviteCode, location="accept invite page", wait=0):
 		return imports.Guild(self.discord, self.s, self.log).joinGuild(inviteCode, location, wait)
+	
+	def joinGuildCaptcha(self, inviteCode, captchaKey, rqToken, location="accept invite page", wait=0):
+		return imports.Guild(self.discord, self.s, self.log).joinGuildCaptcha(inviteCode, captchaKey, rqToken, location, wait)
 
 	#preview/lurk-join guild. Only applies to current (gateway) session
 	def previewGuild(self, guildID, sessionID=None):
